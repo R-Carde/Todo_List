@@ -1,11 +1,13 @@
 package com.example.todolistaristidevs
 
+import android.app.Dialog
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todolistaristidevs.TaskCategory.*
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var categoriesAdapter: CategoryAdapter
     private lateinit var rvTasks: RecyclerView
     private lateinit var taskAdapter:TaskAdapter
+    private lateinit var favAddTask: FloatingActionButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,11 +35,23 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         initComponents()
         initUi()
+        initListeners()
+    }
+
+    private fun initListeners() {
+        favAddTask.setOnClickListener {
+           showDialog()
+        }
+    }
+
+    private fun showDialog(){
+        val dialog = Dialog(this)
     }
 
     fun initComponents() {
         rvCategories = findViewById(R.id.rvCategories)
         rvTasks = findViewById(R.id.rvTasks)
+        favAddTask = findViewById(R.id.favAddTask)
 
     }
     fun initUi() {

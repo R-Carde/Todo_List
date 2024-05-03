@@ -3,4 +3,6 @@
     <string name="to_do_title">To do list</string>
     <string name="to_do_categorias">Categorias</string>
     <string name="tasks">Tareas</string>
+    <string name="todo_dialog_add_task">Añade la Tarea</string>
+    <string name="business">Negocios</string>
 </resources>
